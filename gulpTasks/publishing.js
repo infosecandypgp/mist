@@ -69,7 +69,7 @@ gulp.task('upload-binaries', (cb) => {
     })
     // upload binaries from release folders if in draft mode
     .then((draft) => {  // eslint-disable-line consistent-return
-        if (draft.draft === true) {
+        if (draft.draft === false) {
             const dir = `dist_${type}/release`;
             const files = fs.readdirSync(dir);
             const filePaths = _.map(files, (file) => { return path.join(dir, file); });
